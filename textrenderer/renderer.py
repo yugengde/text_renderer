@@ -197,6 +197,10 @@ class Renderer(object):
         # It's important do crop first and than do resize for speed consider
         dst = img[dst_bbox[1]:dst_bbox[1] + dst_bbox[3], dst_bbox[0]:dst_bbox[0] + dst_bbox[2]]
 
+        text_box_pnts_transformed = text_box_pnts_transformed.astype(np.int)
+        w1, w2 = min(text_box_pnts_transformed[:, 0]), max(text_box_pnts_transformed[:, 0])
+        h1, h2 =  min(text_box_pnts_transformed[:, 1]), max(text_box_pnts_transformed[:, 1])
+        dst = img[h1:h2, w1:w2]
         dst = cv2.resize(dst, (dst_width, self.out_height), interpolation=cv2.INTER_CUBIC)
 
         return dst, dst_bbox
