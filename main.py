@@ -84,7 +84,7 @@ def generate_img(img_index, q=None):
         fname = os.path.join(flags.save_dir, base_name + '.jpg')
         cv2.imwrite(fname, im)
 
-        label = "{} {}".format(base_name, word)
+        label = "{}.jpg\t{}".format(base_name, word)
 
         if q is not None:
             q.put(label)
@@ -140,7 +140,7 @@ if __name__ == "__main__":
     if flags.viz == 1:
         flags.num_processes = 1
 
-    tmp_label_path = os.path.join(flags.save_dir, 'tmp_labels.txt')
+    tmp_label_path = os.path.join(flags.save_dir, '%s.txt'%flags.tag)
     label_path = os.path.join(flags.save_dir, 'labels.txt')
 
     manager = mp.Manager()
