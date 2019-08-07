@@ -3,6 +3,11 @@
 simsun.ttc
 
 
+## generate train and val images
+```
+python3 help_runner-2.py
+```
+
 # Text Renderer
 Generate text images for training deep learning OCR model (e.g. [CRNN](https://github.com/bgshih/crnn)).
 Support both latin and non-latin text.
