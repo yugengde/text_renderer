@@ -27,3 +27,4 @@ output/
 tags
 output*
 gen.py
+lmdb*
