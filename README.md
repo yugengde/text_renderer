@@ -3,10 +3,14 @@
 simsun.ttc
 
 
-## generate train and val images
+## generate lmdb data
 ```
-python3 help_runner-2.py
+python3 help_runner-2.py 
+python3 create_dataset.py 
+python3 dataset.py
 ```
+
+
 
 # Text Renderer
 Generate text images for training deep learning OCR model (e.g. [CRNN](https://github.com/bgshih/crnn)).
