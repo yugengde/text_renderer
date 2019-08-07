@@ -27,10 +27,7 @@ class ChnCorpus(Corpus):
                 if line_striped != u'' and len(line.strip()) > 1:
                     lines.append(line_striped)
 
-            # 所有行合并成一行
-            split_chars = [',', '，', '：', '-', ' ', ';', '。']
-            splitchar = random.choice(split_chars)
-            whole_line = splitchar.join(lines)
+            whole_line = ''.join(lines)
 
             # 在 crnn/libs/label_converter 中 encode 时还会进行过滤
             whole_line = ''.join(filter(lambda x: x in self.charsets, whole_line))
