@@ -53,9 +53,9 @@ def parse_args():
     parser.add_argument('--strict', action='store_true', default=False,
                         help="check font supported chars when generating images")
 
-    parser.add_argument('--gpu', action='store_true', default=False, help="use CUDA to generate image")
+    parser.add_argument('--gpu', action='store_true', default=True, help="use CUDA to generate image")
 
-    parser.add_argument('--num_processes', type=int, default=None,
+    parser.add_argument('--num_processes', type=int, default='8',
                         help="Number of processes to generate image. If None, use all cpu cores")
 
     flags, _ = parser.parse_known_args()
